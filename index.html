@@ -1,23 +1,11 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <title>Mini App</title>
+    <!-- Telegram WebApp SDK -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
-  <form id="otpForm" action="#" method="POST">
-    <label for="mobile">Mobile Number:</label><br>
-    <input type="tel" id="mobile" name="mobile" required><br><br>
-    <button type="submit">Send OTP</button>
-  </form>
-
-  <script>
-    window.Telegram.WebApp.ready();
-    const user = window.Telegram.WebApp.initDataUnsafe.user;
-
-    if (!user) {
-      document.body.innerHTML = "Access Denied";
-    }
-  </script>
+    <h1>वेलकम!</h1>
 </body>
 </html>
