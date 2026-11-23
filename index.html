@@ -7,5 +7,22 @@
 </head>
 <body>
     <h1>वेलकम!</h1>
-</body>
-</html>
+    <button onclick="shareContact()">Share Contact</button>
+
+    <script>
+        const tg = window.Telegram.WebApp;
+        tg.ready();
+
+        function shareContact() {
+            tg.requestContact((shared, event) => {
+                if (shared) {
+                    const contact = event.response?.contact;
+                    tg.sendData(JSON.stringify({
+                        phone_number: contact?.phone_number,
+                        first_name: contact?.first_name,
+                        user_id: tg.initDataUnsafe?.user?.id
+                    }));
+                }
+            });
+        }
+    </script>
